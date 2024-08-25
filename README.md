@@ -6,7 +6,7 @@
 I am reading these papers:
 
 ☑️ [**Attention is All You Need (NIPS 2017)**](https://arxiv.org/abs/1706.03762) <br>
-☑️ [*ViT for Image Recognition at Scale](https://arxiv.org/abs/2010.11929) 
+☑️ [**ViT for Image Recognition at Scale**](https://arxiv.org/abs/2010.11929) <br>
 ☑️ [**DeiT (Data-efficient Image Transformers)**](https://arxiv.org/abs/2012.12877) <br>
 ☑️ [**Efficient Vision Transformers via Fine-Grained Manifold Distillation**](https://arxiv.org/abs/2107.01378) <br>
 ☑️ [**NViT (Vision Transformer Compression and Parameter Redistribution)**](https://arxiv.org/abs/2110.04869) <br>
