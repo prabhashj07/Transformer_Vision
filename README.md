@@ -37,6 +37,7 @@ I am reading these blogs:
 | 2020 Dec   | IPT/SETR/CLIP         | Transformers have been applied to low-level vision, segmentation, and multimodality tasks, respectively.      | ✅                  |
 | 2021 - today | ViT Variants        | Several ViT variants include DeiT, PVT, TNT, Swin, and CSWin (2022)                                           | ✅                  |
 
+![Transformer In Vision](assets/Transformer-in-vision.png)
 
 ## Goals 🎯
 
