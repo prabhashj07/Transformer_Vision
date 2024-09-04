@@ -39,6 +39,30 @@ This paper explores applying Transformers directly to images by treating image p
 - **Sun et al. (2017)**: Studied CNN performance scaling with dataset size.
 - **Kolesnikov et al. (2020); Djolonga et al. (2020)**: Explored CNN transfer learning with large datasets like ImageNet-21k and JFT-300M.
 
-#### Our Contribution 🚀
+#### Paper Contribution 🚀
 - Focuses on applying Transformers to large-scale image recognition, specifically using large datasets such as ImageNet-21k and JFT-300M, and achieving state-of-the-art results compared to traditional ResNet-based models.
 
+### Outline
+- Vision Transformer(ViT)
+- Hybrid Architecture
+- Some Training Details 
+- Experimental Results
+
+
+#### Vision Transformer (ViT)
+![Vision Transformer](../assets/vision_transformer.png)
+*Vision Transformer Netwokr Architecture*
+
+- To handle 2D images, the image x is reshaped from H×W×C into a sequence of flattened 2D patches xp, with the shape of N×(P²×C), where (H, W) is the resolution of the original image, C is the number of channels, (P, P) is the resolution of each image patch, and N=HW/P² is the resulting number of patches.
+
+![ViT Maths](../assets/ViT_equations.png)
+
+- Eq. 1: The Transformer uses constant latent vector size D through all of its layers, so the patches are flattened and map to D dimensions with a trainable linear projection. The output of this projection as the **patch embeddings**.
+- Similar to BERT’s [class] token, a learnable embedding is prepended to the sequence of embedded patches (z00=xclass)
+- Eq. 4: The state at the output of the Transformer encoder (z0L) serves as the **image representation y**.
+- Both during pre-training and fine-tuning, a classification head is attached to z0L. The classification head is implemented by a MLP with one hidden layer at pre-training time and by a single linear layer at fine-tuning time.
+- Position embeddings are added to the patch embeddings to retain positional information. Standard learnable 1D position embeddings is used.
+- Eq. 2, 3: The Transformer encoder consists of alternating layers of multiheaded self-attention (MSA) and MLP blocks.
+- Layernorm (LN) is applied before every block, and residual connections after every block. The MLP contains two layers with a GELU non-linearity.
+- The “Base” and “Large” models are directly adopted from BERT and the larger “Huge” model is added.
+- ViT-L/16 means the “Large” variant with 16×16 input patch size. Note that the Transformer’s sequence length is inversely proportional to the square of the patch size, and models with smaller patch size are computationally more expensive.
