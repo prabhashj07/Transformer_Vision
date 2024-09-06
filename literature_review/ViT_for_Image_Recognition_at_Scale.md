@@ -49,8 +49,8 @@ This paper explores applying Transformers directly to images by treating image p
 
 
 ## VISION TRANSFORMER (ViT)
-![Vision Transformer](../assets/vision_transformer.png)
-*Vision Transformer Netwokr Architecture*
+![Vision Transformer](../assets/vision_transformer.png) <br>
+*Vision Transformer Network Architecture*
 
 - To handle 2D images, the image x is reshaped from H×W×C into a sequence of flattened 2D patches xp, with the shape of N×(P²×C), where (H, W) is the resolution of the original image, C is the number of channels, (P, P) is the resolution of each image patch, and N=HW/P² is the resulting number of patches.
 
@@ -86,14 +86,14 @@ This paper explores applying Transformers directly to images by treating image p
 
 ## EXPERIMENTAL RESULTS
 #### SOTA Comparison
-![Sota](../assets/sota_comparison-1.png)
+![Sota](../assets/sota_comparison-1.png) <br>
 *Comparison with state of the art on popular image classification benchmarks. The number of TPUv3-core-days is the number of TPU v3 cores (2 per chip) used for training multiplied by the training time in days.*
 
 - The smaller ViT-L/16 model pre-trained on JFT-300M outperforms BiT-L on all tasks, while requiring substantially less computational resources to train. 
 - The larger model, **ViT-H/14**, further improves the performance, especially on the more challenging datasets.
 - ViT models still look substantially less compute to pre-train.
 
-![sota2](../assets/sota-comparison-2.png)
+![sota2](../assets/sota-comparison-2.png) <br>
 *Breakdown of VTAB performance in Natural, Specialized, and Structured task groups.*
 
 - BiT, VIVI — a ResNet co-trained on ImageNet and YouTube, and S4L — supervised plus semi-supervised learning on ImageNet.
@@ -102,7 +102,7 @@ This paper explores applying Transformers directly to images by treating image p
 On the Specialized the performance of the top two models is similar.
 
 #### Pretraining Data Requirement
-![Pretraining_Data_Requirement](../assets/pretraining_data_requirement.png)
+![Pretraining_Data_Requirement](../assets/pretraining_data_requirement.png) <br>
 *Left: Transfer to ImageNet, Right: Linear few-shot evaluation on ImageNet versus pre-training size (ViT-b is ViT-B with all hidden dimensions halved.)*
 
 - **Left**: When pre-trained on the smallest dataset, ImageNet, ViT-Large models underperform compared to ViT-Base models, despite (moderate) regularization.
@@ -117,7 +117,7 @@ This result reinforces the intuition that the convolutional inductive bias is us
 
 #### Scaling Study
 
-![Scaling Study](../assets/scaling_study.png)
+![Scaling Study](../assets/scaling_study.png) <br>
 *Performance versus pre-training compute for different architectures*
 
 - The number of pretraining epochs is from 7 to 14, so that data size does not bottleneck the model's performance.
@@ -127,17 +127,18 @@ This result reinforces the intuition that the convolutional inductive bias is us
 3. Vision Transformers appear not to saturate within the range tried.
 
 #### Inspecting Vision Transformer
-![Inspecting ViT](../assets/Inspecting_ViT.png)
+
+![Inspecting ViT](../assets/Inspecting_ViT.png) <br>
 *Left: Filters of the initial linear embedding of RGB values of ViT-L/32. Center: Similarity of position embeddings of ViT-L/32. Right: Size of attended area by head and network depth.*
 - **Left**: The components resemble plausible basis functions for a low-dimensional representation of the fine structure within each patch.
 - **Center**: The model learns to encode distance within the image in the similarity of position embeddings, i.e. closer patches tend to have more similar position embeddings.
 - **Right**: The average distance in image space across which information is integrated, based on the attention weights. This “attention distance” is analogous to receptive field size in CNNs.
 - Some heads attend to most of the image already in the lowest layers, showing that the ability to integrate information globally is indeed used by the model.
 
-![Inspecting ViT-1](../assets/Inspecting_Vit-1.png)
+![Inspecting ViT-1](../assets/Inspecting_Vit-1.png) <br>
 *Representative examples of attention from the output token to the input space.*
 
-![Inspecting_ViT-2](../assets/Inspecting_ViT-2.png)
+![Inspecting_ViT-2](../assets/Inspecting_ViT-2.png) <br>
 *Further example attention maps*
 
 The model attends to image regions that are semantically relevant for classification.
