@@ -22,7 +22,8 @@ I am reading these papers:
 ## Blogs 📝
 I am reading these blogs:
 
-☑️ [**Vision Transformers (ViT) in Image Recognition – 2024 Guide**](https://viso.ai/deep-learning/vision-transformer-vit/) <br>
+✅ [**Vision Transformers (ViT) in Image Recognition – 2024 Guide**](https://viso.ai/deep-learning/vision-transformer-vit/) <br>
+✅ [Review: Vision Transformer (ViT)](https://sh-tsang.medium.com/review-vision-transformer-vit-406568603de0)
 
 
 ## Origin and History of Vision Transformer Models
