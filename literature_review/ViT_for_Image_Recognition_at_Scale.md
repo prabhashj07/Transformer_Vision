@@ -149,7 +149,7 @@ The model attends to image regions that are semantically relevant for classifica
 With self-supervised pre-training, the smaller ViT-B/16 model achieves 79.9% accuracy on ImageNet, a significant improvement of 2% to training from scratch, but still 4% behind supervised pre-training.
 
 ## RESOURCE
-- [2021 ICLR][Vision Transformer, ViT](https://arxiv.org/abs/2010.11929)
+- [2021 ICLR] <br> [Vision Transformer, ViT](https://arxiv.org/abs/2010.11929)
 - [Review: Vision Transformer (ViT)](https://sh-tsang.medium.com/review-vision-transformer-vit-406568603de0)
 
 
