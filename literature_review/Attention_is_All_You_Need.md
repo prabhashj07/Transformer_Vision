@@ -95,11 +95,11 @@ Each sub-layer (self-attention, ffnn) in each encoder has a residual connection 
 *The Residual Layer-Normalization*
 
 If we're to visualize the vector and the layer-norm operation associated with self attention:
-![Vector and layer-normalization operation](../asssets/transformer_resideual_layer_norm_2.png) <br>
+![Vector and layer-normalization operation](../assets/transformer_resideual_layer_norm_2.png)) <br>
 *Vector and the layer-normalization operation associated with self-attention*
 
 This goes for the sub-layer of the decoder as well. Think of a Transformer of 2 stacked encoders and decoders, it would look something like this: 
-![Transformer of 2 stacked encoders and decoders](../asssets/transformer_resideual_layer_norm_3.png)<br>
+![Transformer of 2 stacked encoders and decoders](../assets/transformer_resideual_layer_norm_3.png)<br>
 *Transformer of 2 stacked encoders and decoders*
 
 ## THE DECODER
