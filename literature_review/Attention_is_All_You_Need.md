@@ -75,6 +75,20 @@ To prevent repeated matrix multiplication to explode the result, it is scaled by
 
 The output of the Multi-Head Attention layer flows into a standard ReLU-activated and Adam-optimized feed-forward neural network. Each layer employs a residual connection to facilitate backpropagation and prevent exploding gradients. At the end of each encoder subunit, there is a dropout layer using a rate of 0.1 (not shown in the diagram).
 
+## THE RESIDUALS
+Each sub-layer (self-attention, ffnn) in each encoder has a residual connection around it, and is followed by a **layer-normalization** step.
+![Transformer Residual layer](../assets/transformer_resideual_layer_norm.png) <br>
+*The Residual Layer-Normalization*
+
+If we're to visualize the vector and the layer-norm operation associated with self attention:
+![Vector and layer-normalization operation](../asssets/transformer_resideual_layer_norm_2.png) <br>
+*Vector and the layer-normalization operation associated with self-attention*
+
+This goes for the sub-layer of the decoder as well. Think of a Transformer of 2 stacked encoders and decoders, it would look something like this: 
+![Transformer of 2 stacked encoders and decoders](../asssets/transformer_resideual_layer_norm_3.png)<br>
+*Transformer of 2 stacked encoders and decoders*
+
+## THE DECODER
 ![The decoder block of the Transformer Architecture](../assets/The_decoder_block_transformer.png)
 *The decoder block of the Transformer architecture*
 
@@ -90,4 +104,6 @@ By eliminating recurrence from a well-established encoder-decoder architecture, 
 
 Because the hidden dimensionality d needs to be quite large for the model to be sufficiently expressive, the computational complexity of Self-Attention, O(n² ⋅ d), is much smaller compared to that of an RNN, O(n ⋅ d²), or a CNN, O(k ⋅ n ⋅ d²), where n represents the sequence length and k is the filter width. This reduction in complexity allowed the Transformer to train at a significantly lower cost and faster rate than other models, including ensembles.
 
-[READ MORE](https://sh-tsang.medium.com/review-attention-is-all-you-need-transformer-96c787ecdec1)
+## RESOURCES
+- [REVIEW: ATTENTION IS ALL YOU NEED TRANSFORMER](https://sh-tsang.medium.com/review-attention-is-all-you-need-transformer-96c787ecdec1)
+- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
