@@ -58,6 +58,20 @@ The Transformer architecture follows an encoder-decoder structure but does not r
 *The encoder block of the Transformer architecture*
 
 The encoder consists of a stack of N = 6 identical layers, where each layer is composed of two sublayers. Inputs are translated to word vectors of dimensional = 512 through the input embedding layer and injected with positional encoding, which adds information about the order of the sequence using the following equations:
+![The Transformer Encoder stack](../assets/The_transformer_encoder_decoder_stack.png) <br>
+*The Transformer Encoder Decoder Stack* 
+
+The encoder are all identical in structure (yet they do not share weights). Each one is broken down into two sub-layers:
+
+![The encoder sublayers](../assets/Transformer_encoder.png) <br>
+*The Transformer encoder sub-layers* 
+
+The encoder's input is first passed through a self-attention layer - a layer that helps the encoder look at other words in the input sentence as it encodes a specific word. The outputs of the self-attention layer are fed to a feed-forward neural network. The exact same feed-forward network is independently applied to each position. The decoder has both these layers, but between them is an attention layer that helps the decoder focus on relevant parts of the input sentence (similar what attention does in seq2seq models.) <br>
+![Encoder-Decoder layer](../assets/Transformer_decoder.png) <br>
+*Transformer Encoder-Decoder layer* 
+
+
+
 
 ![Positional Encoding](../assets/PE.png)
 
@@ -76,7 +90,7 @@ To prevent repeated matrix multiplication to explode the result, it is scaled by
 The output of the Multi-Head Attention layer flows into a standard ReLU-activated and Adam-optimized feed-forward neural network. Each layer employs a residual connection to facilitate backpropagation and prevent exploding gradients. At the end of each encoder subunit, there is a dropout layer using a rate of 0.1 (not shown in the diagram).
 
 ## THE RESIDUALS
-Each sub-layer (self-attention, ffnn) in each encoder has a residual connection around it, and is followed by a **layer-normalization** step.
+Each sub-layer (self-attention, ffnn) in each encoder has a residual connection around it, and is followed by a **layer-normalization** step. <br>
 ![Transformer Residual layer](../assets/transformer_resideual_layer_norm.png) <br>
 *The Residual Layer-Normalization*
 
