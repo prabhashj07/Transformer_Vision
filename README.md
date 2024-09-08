@@ -17,7 +17,12 @@ I am reading these papers:
 ☑️ [**DeiT (Data-efficient Image Transformers)**](https://arxiv.org/abs/2012.12877) <br>
 ☑️ [**Efficient Vision Transformers via Fine-Grained Manifold Distillation**](https://arxiv.org/abs/2107.01378) <br>
 ☑️ [**NViT (Vision Transformer Compression and Parameter Redistribution)**](https://arxiv.org/abs/2110.04869) <br>
-☑️ [**SiT (Self-slimmed Vision Transformer)**](https://arxiv.org/abs/2111.12624) <br>
+☑️ [**SiT (Self-slimmed Vision Transformer)**](https://arxiv.org/abs/2111.12624) <br> 
+☑️ [**CLIP (Contrastive Language-Image Pre-Training)**](https://arxiv.org/abs/2103.00020)  
+☑️ [**CaiT (Going Deeper with Image Transformers)**](https://arxiv.org/abs/2103.17239)  
+☑️ [**DETR (End-to-End Object Detection with Transformers)**](https://arxiv.org/abs/2005.12872)  
+☑️ [**Swin Transformer: Hierarchical Vision Transformer using Shifted Windows**](https://arxiv.org/abs/2103.14030)  
+☑️ [**Vision Transformers for Dense Prediction Tasks**](https://arxiv.org/abs/2103.13413)  
 
 ## Blogs 📝
 I am reading these blogs:
